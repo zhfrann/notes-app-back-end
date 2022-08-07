@@ -85,13 +85,13 @@ const editNoteByIdHandler = (request, h) => {
 
     if (index !== -1) {
         notes[index] = {
-            // ...notes[index],  //untuk mempertahankan nilai lainnya (id, createdAt) agar tidak perlu diubah
-            id,
+            ...notes[index],  //untuk mempertahankan nilai lainnya (id, createdAt) agar tidak perlu diubah
+            // id,
+            // notes[index].createdAt,
             title,
             tags,
             body,
             updatedAt,
-            ...notes[index].createdAt,
         };
 
         const response = h.response({
